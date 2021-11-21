@@ -1,0 +1,3 @@
+/home/ca/code2git/mycode/guassNewton/build/CMakeFiles/rebuild_cache.dir
+/home/ca/code2git/mycode/guassNewton/build/CMakeFiles/gaussNewton.dir
+/home/ca/code2git/mycode/guassNewton/build/CMakeFiles/edit_cache.dir

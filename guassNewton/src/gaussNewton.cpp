@@ -10,12 +10,13 @@ GaussNewton::~GaussNewton()
 {
 }
 
-void GaussNewton::solver(std::vector<double> argus, std::vector<double> dependentVariables, double epsilon = 1e-5, int maxIer = 1000)
+void GaussNewton::solver(std::vector<double> argus, std::vector<double> dependentVariables, int maxIer, double epsilon)
 {
     observeNum_ = argus.size();
     argus_ = argus;
     dependentVariables_ = dependentVariables;
     bool isConvergent = false;
+    unsigned int count = 0;
     chrono::steady_clock::time_point t1 = chrono::steady_clock::now();
     for (int i = 0; i < maxIer; ++i)
     {
@@ -23,57 +24,37 @@ void GaussNewton::solver(std::vector<double> argus, std::vector<double> dependen
         Eigen::MatrixXd fx;
         compute_Jacobi_Fx(jacobi, fx);
         Eigen::MatrixXd H = jacobi.transpose() * jacobi;
-        Eigen::MatrixXd g = -jacobi.transpose()*fx;
+        Eigen::MatrixXd g = -jacobi.transpose() * fx;
+
+        Eigen::VectorXd deltaX = H.ldlt().solve(g); //求解线性方程 Hx = b
+        ++count;
+
+        if (deltaX.norm() < epsilon)
+        {
+            isConvergent = true;
+            break;
+        }
+        for (int j = 0; j < parameters_.size(); ++j)
+        {
+            parameters_.at(j) += deltaX(j);
+        }
     }
-
-    // int row = jacobiMs.at(0).rows();
-    // // int col = jacobiM.cols();
-
-    // for (int iter = 0; iter < iterationTime_; ++iter)
-    // {
-    //     MatrixXd H;
-    //     H.resize(row, row);
-    //     H.setZero();
-    //     MatrixXd g;
-    //     g.resize(row, 1);
-    //     g.setZero();
-    //     cost = 0.0;
-    //     for(int j = 0; j < jacobiMs.size(); ++j)
-    //     {
-    //         H += jacobiMs.at(j) * jacobiMs.at(j).transpose();
-    //         g = -jacobiMs.at(j) * fValues.at(j);
-    //         cost += fValues.at(j) * fValues.at(j);
-    //     }
-
-    //     MatrixXd dx;
-    //     dx.resize(row, 1);
-    //     dx.setZero();
-    //     H.ldlt().solve(g); //求解线性方程 Hx = b
-
-    //     if (isnan(dx[0]))
-    //     {
-    //         std::cout << "result is nan!" << std::endl;
-    //         break;
-    //     }
-    //     if (iter > 0 && cost >= costValue_)
-    //     {
-    //         std::cout << "cost: " << cost << " >= last cost: " << costValue_ << std::endl;
-    //         break;
-    //     }
-
-    //     for (int i = 0; i < row; ++i)
-    //     {
-    //         stateValue_(i, 0) += dx(i, 0);
-    //     }
-
-    //     lastCost = cost;
-
-    //     std::cout << "total cost: " << cost << "\t\tupdate: " << dx.transpose() << "\t\testimated para: " << stateValue_.transpose() << std::endl;
-    // }
-
-    chrono::steady_clock::time_point t2 = chrono::steady_clock::now();
-    chrono::duration<double> tmUsed = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-    std::cout << "solve time cost: " << tmUsed.count() << "seconds." << std::endl;
+    if (isConvergent)
+    {
+        std::cout << "converged!" << std::endl;
+        chrono::steady_clock::time_point t2 = chrono::steady_clock::now();
+        chrono::duration<double> tmUsed = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
+        std::cout << "iterate times: " << count << ", spend time: " << tmUsed.count() * 1000 << " millisecond." << std::endl;
+        std::cout << "------------------------------------" << std::endl;
+        std::cout << "estimate para: ";
+        for (int j = 0; j < parameters_.size(); ++j)
+        {
+            std::cout << parameters_.at(j) << " ";
+        }
+        std:: cout << std::endl;
+    }
+    else
+        std::cout << "disconverged!" << std::endl;
 }
 
 void GaussNewton::compute_Jacobi_Fx(Eigen::MatrixXd &jacobi, Eigen::MatrixXd &fx)

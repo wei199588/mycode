@@ -3,32 +3,23 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    Eigen::Matrix<double, 3, 1> iniState;
-    iniState << 2.0, -1.0, 5.0;
-    int iterTime = 100;
-    GaussNewton gn(iniState, iterTime);
-    double ar = 1.0, br = 2.0, cr = 1.0;
-    double wSigma = 1.0;
-    double  invSigma = 1.0 / wSigma;
-    cv::RNG rng;
-
-    vector<double> xData, yData;
-    for(int i = 0; i < 100; ++i)
+    double a = 0.5;
+    double b = 0.5;
+    double c = 2.0;
+    std::vector<double> para = {0.3, 0.4, 1.8};
+    const int N = 100;
+    cv::RNG rng(cv::getTickCount());
+    std::vector<double> x, y;
+    x.resize(N);
+    y.resize(N);
+    std::cout << "real para: " << a <<" " << b << " " << c << std::endl;
+    for(int i = 0; i < N; ++i)
     {
-        double x = i/100.0;
-        xData.push_back(x);
-        yData.push_back(exp(ar*x*x+br*x+cr) + rng.gaussian(wSigma*wSigma));
+        x[i] = rng.uniform(0.0, 1.0);
+        y[i] = exp(a * x[i] * x[i] + b * x[i] + c) + rng.gaussian(0.05);
     }
-
-    std::vector<MatrixXd> Js;
-    for(int i = 0; i < 100; ++i)
-    {
-    
-        MatrixXd J;
-        J.resize(1, 3);
-        J.setZero();
-        // J(0,1) = -xData.at(i)*xData.at(i)*exp()
-    } 
+    GaussNewton gnSolve(para);
+    gnSolve.solver(x, y, N, 1.0e-10);
 
     return 0;
 }
