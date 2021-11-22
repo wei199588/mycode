@@ -28,7 +28,7 @@ void GaussNewton::solver(std::vector<double> argus, std::vector<double> dependen
 
         Eigen::VectorXd deltaX = H.ldlt().solve(g); //求解线性方程 Hx = b
         ++count;
-
+        cout << "deltaX: " << deltaX.norm() << endl;
         if (deltaX.norm() < epsilon)
         {
             isConvergent = true;
@@ -73,6 +73,11 @@ void GaussNewton::compute_Jacobi_Fx(Eigen::MatrixXd &jacobi, Eigen::MatrixXd &fx
 
 double GaussNewton::setBias(int n, int biasMod)
 {
+#if SOLVEOMIGA
+    double xi = argus_.at(n);
+    double a = parameters_.at(0);
+    return -xi;
+#else
     double xi = argus_.at(n);
     double a = parameters_.at(0);
     double b = parameters_.at(1);
@@ -95,13 +100,18 @@ double GaussNewton::setBias(int n, int biasMod)
         break;
     }
     return ret;
+#endif
 }
 
 double GaussNewton::setEquationValue(double n)
 {
+#if SOLVEOMIGA
+    return argus_.at(n)*parameters_.at(0);
+#else 
     double xi = argus_.at(n);
     double a = parameters_.at(0);
     double b = parameters_.at(1);
     double c = parameters_.at(2);
     return exp(a * xi * xi + b * xi + c);
+#endif
 }

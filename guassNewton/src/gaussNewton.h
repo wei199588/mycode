@@ -7,17 +7,19 @@
 using namespace std;
 using namespace Eigen;
 
+#define SOLVEOMIGA 1
+
 class GaussNewton
 {
 public:
     GaussNewton(std::vector<double> parameter);
     ~GaussNewton();
 
-    void solver(std::vector<double> argus, std::vector<double> dependentVariables, int maxIer = 1000, double epsilon = 1e-5);
+    void solver(std::vector<double> argus, std::vector<double> dependentVariables, int maxIer = 1000, double epsilon = 1e-5); 
 private:
     void compute_Jacobi_Fx(Eigen::MatrixXd &jacobi, Eigen::MatrixXd &fx);
-    virtual double setBias(int n, int biasMod);
-    virtual double setEquationValue(double n);
+    double setBias(int n, int biasMod);
+    double setEquationValue(double n);
 
 private:
     int observeNum_ = 0; // num of data
