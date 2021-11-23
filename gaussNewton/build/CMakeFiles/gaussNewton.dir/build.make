@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ca/code2git/mycode/guassNewton
+CMAKE_SOURCE_DIR = /home/ca/code2git/mycode/gaussNewton
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ca/code2git/mycode/guassNewton/build
+CMAKE_BINARY_DIR = /home/ca/code2git/mycode/gaussNewton/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/gaussNewton.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/gaussNewton.dir/flags.make
 
 CMakeFiles/gaussNewton.dir/src/main.cpp.o: CMakeFiles/gaussNewton.dir/flags.make
 CMakeFiles/gaussNewton.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ca/code2git/mycode/guassNewton/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gaussNewton.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gaussNewton.dir/src/main.cpp.o -c /home/ca/code2git/mycode/guassNewton/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ca/code2git/mycode/gaussNewton/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gaussNewton.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gaussNewton.dir/src/main.cpp.o -c /home/ca/code2git/mycode/gaussNewton/src/main.cpp
 
 CMakeFiles/gaussNewton.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gaussNewton.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ca/code2git/mycode/guassNewton/src/main.cpp > CMakeFiles/gaussNewton.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ca/code2git/mycode/gaussNewton/src/main.cpp > CMakeFiles/gaussNewton.dir/src/main.cpp.i
 
 CMakeFiles/gaussNewton.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gaussNewton.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ca/code2git/mycode/guassNewton/src/main.cpp -o CMakeFiles/gaussNewton.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ca/code2git/mycode/gaussNewton/src/main.cpp -o CMakeFiles/gaussNewton.dir/src/main.cpp.s
 
 CMakeFiles/gaussNewton.dir/src/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/gaussNewton.dir/src/main.cpp.o.provides.build: CMakeFiles/gaussNewton
 
 CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.o: CMakeFiles/gaussNewton.dir/flags.make
 CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.o: ../src/gaussNewton.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ca/code2git/mycode/guassNewton/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.o -c /home/ca/code2git/mycode/guassNewton/src/gaussNewton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ca/code2git/mycode/gaussNewton/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.o -c /home/ca/code2git/mycode/gaussNewton/src/gaussNewton.cpp
 
 CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ca/code2git/mycode/guassNewton/src/gaussNewton.cpp > CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ca/code2git/mycode/gaussNewton/src/gaussNewton.cpp > CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.i
 
 CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ca/code2git/mycode/guassNewton/src/gaussNewton.cpp -o CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ca/code2git/mycode/gaussNewton/src/gaussNewton.cpp -o CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.s
 
 CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.o.requires:
 
@@ -134,7 +134,7 @@ gaussNewton: /usr/local/lib/libopencv_imgcodecs.so.3.4.3
 gaussNewton: /usr/local/lib/libopencv_imgproc.so.3.4.3
 gaussNewton: /usr/local/lib/libopencv_core.so.3.4.3
 gaussNewton: CMakeFiles/gaussNewton.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ca/code2git/mycode/guassNewton/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable gaussNewton"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ca/code2git/mycode/gaussNewton/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable gaussNewton"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gaussNewton.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -152,6 +152,6 @@ CMakeFiles/gaussNewton.dir/clean:
 .PHONY : CMakeFiles/gaussNewton.dir/clean
 
 CMakeFiles/gaussNewton.dir/depend:
-	cd /home/ca/code2git/mycode/guassNewton/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ca/code2git/mycode/guassNewton /home/ca/code2git/mycode/guassNewton /home/ca/code2git/mycode/guassNewton/build /home/ca/code2git/mycode/guassNewton/build /home/ca/code2git/mycode/guassNewton/build/CMakeFiles/gaussNewton.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ca/code2git/mycode/gaussNewton/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ca/code2git/mycode/gaussNewton /home/ca/code2git/mycode/gaussNewton /home/ca/code2git/mycode/gaussNewton/build /home/ca/code2git/mycode/gaussNewton/build /home/ca/code2git/mycode/gaussNewton/build/CMakeFiles/gaussNewton.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/gaussNewton.dir/depend
 

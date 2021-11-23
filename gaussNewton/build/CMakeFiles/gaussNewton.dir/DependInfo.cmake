@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ca/code2git/mycode/guassNewton/src/gaussNewton.cpp" "/home/ca/code2git/mycode/guassNewton/build/CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.o"
-  "/home/ca/code2git/mycode/guassNewton/src/main.cpp" "/home/ca/code2git/mycode/guassNewton/build/CMakeFiles/gaussNewton.dir/src/main.cpp.o"
+  "/home/ca/code2git/mycode/gaussNewton/src/gaussNewton.cpp" "/home/ca/code2git/mycode/gaussNewton/build/CMakeFiles/gaussNewton.dir/src/gaussNewton.cpp.o"
+  "/home/ca/code2git/mycode/gaussNewton/src/main.cpp" "/home/ca/code2git/mycode/gaussNewton/build/CMakeFiles/gaussNewton.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

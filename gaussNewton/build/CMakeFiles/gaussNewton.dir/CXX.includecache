@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/ca/code2git/mycode/guassNewton/src/gaussNewton.cpp
+/home/ca/code2git/mycode/gaussNewton/src/gaussNewton.cpp
 gaussNewton.h
-/home/ca/code2git/mycode/guassNewton/src/gaussNewton.h
+/home/ca/code2git/mycode/gaussNewton/src/gaussNewton.h
 chrono
 -
 
-/home/ca/code2git/mycode/guassNewton/src/gaussNewton.h
+/home/ca/code2git/mycode/gaussNewton/src/gaussNewton.h
 opencv2/opencv.hpp
 -
 eigen3/Eigen/Core
@@ -22,9 +22,11 @@ eigen3/Eigen/Dense
 vector
 -
 
-/home/ca/code2git/mycode/guassNewton/src/main.cpp
+/home/ca/code2git/mycode/gaussNewton/src/main.cpp
+fstream
+-
 gaussNewton.h
-/home/ca/code2git/mycode/guassNewton/src/gaussNewton.h
+/home/ca/code2git/mycode/gaussNewton/src/gaussNewton.h
 
 /usr/local/include/eigen3/Eigen/Cholesky
 Core

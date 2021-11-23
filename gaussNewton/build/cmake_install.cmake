@@ -1,4 +1,4 @@
-# Install script for directory: /home/ca/code2git/mycode/guassNewton
+# Install script for directory: /home/ca/code2git/mycode/gaussNewton
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ca/code2git/mycode/guassNewton/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ca/code2git/mycode/gaussNewton/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -6,5 +6,5 @@ CXX_FLAGS = -O1 -falign-functions -falign-jumps   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /usr/local/include -isystem /usr/local/include/opencv -I/home/ca/code2git/mycode/guassNewton/src 
+CXX_INCLUDES = -isystem /usr/local/include -isystem /usr/local/include/opencv -I/home/ca/code2git/mycode/gaussNewton/src 
 

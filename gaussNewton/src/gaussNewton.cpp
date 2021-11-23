@@ -76,7 +76,22 @@ double GaussNewton::setBias(int n, int biasMod)
 #if SOLVEOMIGA
     double xi = argus_.at(n);
     double a = parameters_.at(0);
-    return -xi;
+    double b = parameters_.at(1);
+    double ret = 0.0;
+    switch (biasMod)
+    {
+    case 0:
+        ret = -xi;
+        break;
+    case 1:
+        ret = -1;
+    default:
+        break;
+    }
+    return ret;
+    // double xi = argus_.at(n);
+    // double a = parameters_.at(0);
+    // return -xi;
 #else
     double xi = argus_.at(n);
     double a = parameters_.at(0);
@@ -106,7 +121,11 @@ double GaussNewton::setBias(int n, int biasMod)
 double GaussNewton::setEquationValue(double n)
 {
 #if SOLVEOMIGA
-    return argus_.at(n)*parameters_.at(0);
+    // return argus_.at(n)*parameters_.at(0);
+    double xi = argus_.at(n);
+    double a = parameters_.at(0);
+    double b = parameters_.at(1);
+    return  a*xi + b;
 #else 
     double xi = argus_.at(n);
     double a = parameters_.at(0);
