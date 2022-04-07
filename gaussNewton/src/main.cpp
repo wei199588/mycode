@@ -29,11 +29,17 @@ int main(int argc, char const *argv[])
     std::ofstream fs("../point.csv");
     fs << "x" <<"," << "y" << endl;
     std::cout << "real para: " << a << " " << b << std::endl;
-    for (int i = 0; i < N; ++i)
+    for (int i = 0; i < N/2; ++i)
     {
-        x[i] = rng.uniform(-2.0, 2.0);
+        x[i] = rng.uniform(-2.0, 0.0);
         y[i] = a*x[i] + b + rng.gaussian(1);
         fs << x[i] << "," << y[i] << endl;
+    }
+    for (int i = 0; i < N/2; ++i)
+    {
+        x[50+i] = rng.uniform(1.0, 2.0);
+        y[50+i] = a*x[50+i] + b + rng.gaussian(1);
+        fs << x[50+i] << "," << y[50+i] << endl;
     }
 #else
     double a = 0.5;
